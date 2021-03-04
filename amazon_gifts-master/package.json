@@ -1,0 +1,14 @@
+{
+  "name": "amazon_gifts",
+  "version": "0.0.1",
+  "description": "Buy all the gift cards!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "selenium-webdriver": "^2.52.0"
+  }
+}

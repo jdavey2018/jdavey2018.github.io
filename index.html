@@ -22,8 +22,19 @@
 				<! Live Purchase Feed >
 				<div class="col-sm-4">
 					<h1 class=columnHead>FEED</h1>	
-
-					<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQMafsu466Xbm0fIbqI5BVZnYI5eG4gLiV_75-0G47mCc08tp2ccUo66nUyyJ6PLntuHdFhLqzlJkNg/pubhtml?widget=true&amp;headers=false"></iframe>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Date</th>
+								<th>Item</th>
+								<th>Purchaser</th>
+								<th>Cost</th>
+								<th>Exclusions</th>
+								
+							</tr>
+						</thead>
+						<tbody id="feed"></tbody>
+					</table>
 				</div>
 
 
@@ -31,9 +42,9 @@
 				<! Automated Purchase Interface >
 				<div class="col-sm-4">
 					<h1 class=columnHead>QUICKBUY</h1>
-					<div class="row">
-						<aside class="col-md-3">
-							<img src="productResources/towels.png" width=100%>
+					<div class="row productView">
+						<aside class="col-md-3 productImageFrame">
+							<img class="productImage"src="productResources/towels.png">
 						</aside>
 						<div class="col-md-6">
 							<div class="info-main">
@@ -41,17 +52,17 @@
 								<p> Last Purchased by ___ on ____ </p>
 							</div>
 						</div>
-						<aside class="col-sm-3">
+						<aside class="col-sm-3 ">
 							<h4> $30.44 </h4>	
 							<br>
 							<a href="#" class="btn btn-primary"> Order Now </a>
 						</aside>
 					</div>
 					<br>
-					<div class="row">
-						<aside class="col-md-3">
-							<img src="productResources/foil.png" width=100%>
-						</aside>
+					<div class="row productView">
+						<div class="col-md-3 productImageFrame">
+							<img class="productImage" src="productResources/foil.png">
+						</div>
 						<div class="col-md-6">
 							<div class="info-main">
 								<a href="https://www.amazon.com/Reynolds-Wrap-Heavy-Aluminum-Square/dp/B00M8ZEAW4/ref=sr_1_3_sspa?crid=36UENJRR9JZF1&dchild=1&keywords=aluminum+foil&qid=1614757628&sprefix=aluminum%2Caps%2C235&sr=8-3-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFVTjZCTDFQNUlIVzcmZW5jcnlwdGVkSWQ9QTAxMTk5MzYzUzJVOTZBMlBNMlBZJmVuY3J5cHRlZEFkSWQ9QTEwMTMzMjYxQkJCTTJTR0Y3TTVGJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ=="> <h3>Aluminum Foil </h3></a>
@@ -65,9 +76,9 @@
 						</aside>
 					</div>
 					<br>
-					<div class="row">
-						<aside class="col-md-3">
-							<img src="productResources/oliveoil.png" width=100%>
+					<div class="row productView">
+						<aside class="col-md-3 productImageFrame">
+							<img class="productImage"src="productResources/oliveoil.png">
 						</aside>
 						<div class="col-md-6">
 							<div class="info-main">
@@ -121,7 +132,7 @@
 
 			<footer>
 				<input type="checkbox" class="custom-control-input" checked=""> 
-				<label >I'm 18+ (I'm not retarded and checked my shit)</label> 
+				<label >I'm 18+ (I'm not dumb and checked my stuff)</label> 
 			</footer>
 		</div>
 	</main>
@@ -129,6 +140,7 @@
 
 
 <script>
+	//Send form data to Google 'autocosts' sheet
 	const scriptURL = 'https://script.google.com/macros/s/AKfycbxZj0Uct5N-ZVsJBWipwO2XCuR-qkNKNhc1SN5yfooFxTyVTevHnXNIhRovAE1ZjM7f/exec'
 	const form = document.forms['submit-to-google-sheet']
 
@@ -138,6 +150,50 @@
 		.then(response => console.log('Success!', response))
 		.catch(error => console.error('Error!', error.message))
 	})
+	//End 
+
+
+	//Retrieve Live Google Sheet Data
+	let xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200) {
+			let data = JSON.parse(this.responseText).feed.entry;
+			let i;
+			for (i = 0; i < data.length; i++) {
+				let date = data[i]["gsx$date"]["$t"];
+				let item = data[i]["gsx$item"]["$t"];
+				let purchaser = data[i]["gsx$purchaser"]["$t"];
+				let cost = data[i]["gsx$cost"]["$t"];
+				let exclusions = data[i]["gsx$exclusions"]["$t"];
+
+				document.getElementById("feed").innerHTML +=
+				"<tr>" +
+				"<td>" +
+				date +
+				"</td>" +
+				"<td>" +
+				item +
+				"</td>" +
+				"<td>" +
+				purchaser +
+				"</td>" +
+				"<td>" +
+				cost +
+				"</td>" +
+				"<td>" +
+				exclusions +
+				"</td>" +
+				"</tr>";
+			}
+		}
+	};
+
+	xmlhttp.open(
+		"GET",
+		"https://spreadsheets.google.com/feeds/list/1J3e1Ty8Iih2agrLGCU7dNhRsPrtqGeOS4jdJJXX6r5Y/od6/public/values?alt=json",
+		true
+		);
+	xmlhttp.send();
 </script>
 
 </html>

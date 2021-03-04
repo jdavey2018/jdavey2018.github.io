@@ -1,0 +1,38 @@
+
+body {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  height: 100%;
+  background-color: black;
+  position: relative;
+}
+
+main{
+	<!-- filter: blur(10px);-->
+}
+
+header{
+  justify-content: center;
+}
+
+.columnHead{
+	color: #F59632;
+	font-family: arial;
+	font-weight: bold;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.btn{
+	background-color: #F59632;
+	color: black;
+}
+
+input{
+	color: black;
+}
+
+iframe{
+	height: 300px;
+}

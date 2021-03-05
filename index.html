@@ -161,6 +161,8 @@
 				let data = JSON.parse(this.responseText).feed.entry;
 				var contents = document.getElementById('feed').innerHtml;
 
+				//Ensure latest charges appear at top, rather than bottom.
+				data.reverse();
 				//Clear feed for data refresh
 				const myNode = document.getElementById("feed");
 				myNode.innerHTML = '';
@@ -192,8 +194,9 @@
 					"</td>" +
 					"</tr>";
 				}
-				if(contents != undefined)
-					document.getElementById("feed").innerHTML +=contents;
+				if(contents != undefined){
+					//document.getElementById("feed").innerHTML +=contents;
+				}
 
 			}
 		};

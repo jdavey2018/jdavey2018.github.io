@@ -1,213 +1,49 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-	<meta charset="utf-8">
-	<title>TheHUB</title>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-	<link href="style.css" rel="stylesheet">
+  <title>Jack Davey</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="A personal website for Jack Davey, a full stack developer and web design student">
+  <meta name="keywords" content="jack, davey, john, jack davey, john davey">
+  <meta name="author" content="Jack Davey">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="style.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 </head>
-
-
 <body>
-	<div class="container-fluid">
-		<header>
-			<img src="logo.png" width="200px" />
-			<label>User</label>
-			<input type="text"  placeholder="BB">
-			<label>Pass</label>
-			<input type="text"  placeholder="KSD64">
-		</header>
-		<main>
-			<div class="row">
-				<! Live Purchase Feed >
-				<div class="col-sm-4">
-					<h1 class=columnHead>FEED</h1>	
-					<table class="table">
-						<thead>
-							<tr>
-								<th>Date</th>
-								<th>Item</th>
-								<th>Purchaser</th>
-								<th>Cost</th>
-								<th>Exclusions</th>
-								
-							</tr>
-						</thead>
-						<tbody id="feed"></tbody>
-					</table>
-				</div>
+  <div id="hero" class="container-fluid">
+    <h1 class="title">Hey, I'm Jack</h1>
+    <aside class="info">
+     <!-- Animated title description here -->
+     <p>Designer, Photographer, and Full-Stack Engineer</p>
+   </aside>
+ </div>
 
+ <div class="homeSection col-sm-12" style="background-color: white">
+  <h1> Projects </h1> 
+  <div class="project">
+    <a href="hub.html">Hub House Management Interface</a>
+  </div>
+</div>
 
-
-				<! Automated Purchase Interface >
-				<div class="col-sm-4">
-					<h1 class=columnHead>QUICKBUY</h1>
-					<div class="row productView">
-						<aside class="col-md-3 productImageFrame">
-							<img class="productImage"src="productResources/towels.png">
-						</aside>
-						<div class="col-md-6">
-							<div class="info-main">
-								<a href="https://www.amazon.com/Bounty-Quick-Size-Paper-Towels-Family/dp/B079VP6DH6/ref=sr_1_2_sspa?crid=3QR46WM3LIMFE&dchild=1&keywords=paper+towels&qid=1614756558&sprefix=paper+t%2Caps%2C235&sr=8-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExTEFMN1JSNDZPRUFHJmVuY3J5cHRlZElkPUEwMDkzNjgxMTVSR0EwN0tSUFU3UiZlbmNyeXB0ZWRBZElkPUEwMjgzNTg5MTU2SzQxOUhIRExCWCZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU="> <h3>Paper Towels </h3></a>
-								<p> Last Purchased by ___ on ____ </p>
-							</div>
-						</div>
-						<aside class="col-sm-3 ">
-							<h4> $30.44 </h4>	
-							<br>
-							<a href="#" class="btn btn-primary"> Order Now </a>
-						</aside>
-					</div>
-					<br>
-					<div class="row productView">
-						<div class="col-md-3 productImageFrame">
-							<img class="productImage" src="productResources/foil.png">
-						</div>
-						<div class="col-md-6">
-							<div class="info-main">
-								<a href="https://www.amazon.com/Reynolds-Wrap-Heavy-Aluminum-Square/dp/B00M8ZEAW4/ref=sr_1_3_sspa?crid=36UENJRR9JZF1&dchild=1&keywords=aluminum+foil&qid=1614757628&sprefix=aluminum%2Caps%2C235&sr=8-3-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFVTjZCTDFQNUlIVzcmZW5jcnlwdGVkSWQ9QTAxMTk5MzYzUzJVOTZBMlBNMlBZJmVuY3J5cHRlZEFkSWQ9QTEwMTMzMjYxQkJCTTJTR0Y3TTVGJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ=="> <h3>Aluminum Foil </h3></a>
-								<p> Last Purchased by ___ on ____ </p>
-							</div>
-						</div>
-						<aside class="col-sm-3">
-							<h4> $9.98 </h4>	
-							<br>
-							<a href="#" class="btn btn-primary"> Order Now </a>
-						</aside>
-					</div>
-					<br>
-					<div class="row productView">
-						<aside class="col-md-3 productImageFrame">
-							<img class="productImage"src="productResources/oliveoil.png">
-						</aside>
-						<div class="col-md-6">
-							<div class="info-main">
-								<a href="https://www.amazon.com/Pompeian-Pressed-Full-Bodied-Dressings-Marinades/dp/B08L4MLRXZ/ref=sr_1_1_sspa?dchild=1&keywords=olive+oil&qid=1614757743&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExWkVSQUhJVDVPOExPJmVuY3J5cHRlZElkPUEwOTkyMzY1V1VDQVcyV0c1RTFaJmVuY3J5cHRlZEFkSWQ9QTAxNjA4ODMzSjU5UFY3MEswTlJUJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ=="> <h3>Olive Oil </h3></a>
-								<p> Last Purchased by ___ on ____ </p>
-							</div>
-						</div>
-						<aside class="col-sm-3">
-							<h4> $22.25 </h4>	
-							<br>
-							<a href="#" class="btn btn-primary"> Order Now </a>
-						</aside>
-					</div>
-				</div>
-
-				<! Purchase log form >
-				<div class="col-sm-4">
-					<h1 class=columnHead>ADD CHARGE</h1>
-					<form name="submit-to-google-sheet">
-						<div class="form-row">
-							<div class="col form-group">
-								<label>First name</label>
-								<input name="Purchaser" type="text" class="form-control" placeholder="lil' cletus">
-							</div>
-							<div class="col form-group">
-								<label>Item</label>
-								<input name="Item" type="text" class="form-control" placeholder="milk">
-							</div>
-							<div class="col form-group">
-								<label>Price</label>
-								<input name="Cost" type="text" class="form-control" placeholder="420.69">
-							</div>
-							<div class="col form-group">
-								<label>Date</label>
-								<input name="Date" type="text" class="form-control" placeholder="MM/DD">
-							</div>
-							<div class="col form-group">
-								<label>Exclusions</label>
-								<input name="Exclusions" type="text" class="form-control" placeholder="kurt probably">
-							</div>
-
-
-
-							<div class="form-group">
-								<button type="submit" class="btn btn-primary btn-block"> Submit  </button>
-							</div> 
-						</div>      
-					</form>
-				</div>
-			</div>
-
-			<footer>
-				<input type="checkbox" class="custom-control-input" checked=""> 
-				<label >I'm 18+ (I'm not dumb and checked my stuff)</label> 
-			</footer>
-		</div>
-	</main>
 </body>
-
-
 <script>
-	//Send form data to Google 'autocosts' sheet
-	const scriptURL = 'https://script.google.com/macros/s/AKfycbxZj0Uct5N-ZVsJBWipwO2XCuR-qkNKNhc1SN5yfooFxTyVTevHnXNIhRovAE1ZjM7f/exec'
-	const form = document.forms['submit-to-google-sheet']
+ $(document).ready(function(){
+  var resizeHero = function(){
+    var hero = $("#hero"), window1 = $(window);
+    hero.css({
+      "width": window1.width(),
+      "height": window1.height()
+    });
+  };
 
-	form.addEventListener('submit', e => {
-		e.preventDefault()
-		fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-		.then(response => console.log('Success!', response))
-		.catch(error => console.error('Error!', error.message))
-	})
-	//End 
+  resizeHero();
 
-
-	//Retrieve Live Google Sheet Data
-	function fetchData() {
-		let xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange = function () {
-			if (this.readyState == 4 && this.status == 200) {
-				let data = JSON.parse(this.responseText).feed.entry;
-				var contents = document.getElementById('feed').innerHtml;
-
-				//Ensure latest charges appear at top, rather than bottom.
-				data.reverse();
-				//Clear feed for data refresh
-				const myNode = document.getElementById("feed");
-				myNode.innerHTML = '';
-
-				//Place google sheet JSON data into feed element
-				for (let i = 0; i < data.length; i++) {
-					let date = data[i]["gsx$date"]["$t"];
-					let item = data[i]["gsx$item"]["$t"];
-					let purchaser = data[i]["gsx$purchaser"]["$t"];
-					let cost = data[i]["gsx$cost"]["$t"];
-					let exclusions = data[i]["gsx$exclusions"]["$t"];
-
-					document.getElementById("feed").innerHTML +=
-					"<tr>" +
-					"<td>" +
-					date +
-					"</td>" +
-					"<td>" +
-					item +
-					"</td>" +
-					"<td>" +
-					purchaser +
-					"</td>" +
-					"<td>" +
-					cost +
-					"</td>" +
-					"<td>" +
-					exclusions +
-					"</td>" +
-					"</tr>";
-				}
-				if(contents != undefined){
-					//document.getElementById("feed").innerHTML +=contents;
-				}
-
-			}
-		};
-
-		xmlhttp.open("GET","https://spreadsheets.google.com/feeds/list/1J3e1Ty8Iih2agrLGCU7dNhRsPrtqGeOS4jdJJXX6r5Y/od6/public/values?alt=json",true);
-		xmlhttp.send();
-	}
-
-	//Set feed data refesh rate
-	setInterval(fetchData, 300);
+  $(window).resize(function(){
+    resizeHero();    
+  });
+});
 </script>
-
 </html>
 

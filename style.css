@@ -74,6 +74,7 @@ h1{
 .project{
   display: flex;
   justify-content: center;
+
 }
 .project-card{
   background: var(--lightShade);
@@ -169,5 +170,13 @@ div.arrow:hover::before {
 
   .alert{
     background: var(--darkAccent);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .project-card{
+    margin-left: 5%;
+    max-width: 90%;
   }
 }

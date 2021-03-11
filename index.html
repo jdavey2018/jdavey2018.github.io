@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Jack Davey</title>
+
+  <!-- Organize this later srsly -->
   <meta charset="UTF-8">
   <meta name="description" content="A personal website for Jack Davey, a full stack developer and web design student">
   <meta name="keywords" content="jack, davey, john, jack davey, john davey">
@@ -16,7 +18,7 @@
 </head>
 <body>
   <div class="alert alert-secondary alert-dismissible" role="alert">
-    <strong>Alert:</strong> 
+    <strong>Alert:&nbsp</strong> 
     This site is still very early in development, daily updates may significantly change its look, feel, and functionality.
     <button type="button" class="close" data-dismiss="alert">×</button>
   </div>
@@ -101,9 +103,15 @@
   duration: 1100,
   delay: (el, i) => 100 + 30 * i
 });
-
-
   //End info text animation
+
+  //Arrow scroll button listener
+  $(".arrow").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".about-section").offset().top},
+        'slow');
+});
+  //End scroll listener
 </script>
 </html>
 

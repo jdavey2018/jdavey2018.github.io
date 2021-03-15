@@ -265,6 +265,13 @@ div.arrow:hover::before {
    color: var(--darkShade);
  }
 
+#navOpen{
+	color: var(--lightShade);
+}
+.sidenav a{
+	color: var(--lightShade);
+}
+
  .title {
   color: var(--mainBrand);
 }
